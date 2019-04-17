@@ -1,0 +1,16 @@
+#include <vector>
+#include <iostream>
+#include <algorithm>
+int main()
+{
+    int n; std::cin >> n;
+    std::vector<std::string> arr(n);
+    for(auto& i : arr)
+        std::cin >> i;
+    std::sort(arr.begin(), arr.end(), [](const std::string &x, const std::string &y){
+        return x+y > y+x;
+    });
+    for(auto& i : arr)
+        std::cout << i;
+    std::cout << '\n';
+}
